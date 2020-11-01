@@ -19,7 +19,6 @@ const getData = async  () => {
 
 
 const popupWindowData = (element) => {
-    console.log(element);
     popupWindow.style.display = "flex";
     popupWindow.style.top = "0";
     popupWindow.style.backgroundColor = "var(--popup_background-color)";
@@ -46,7 +45,8 @@ const popupWindowData = (element) => {
         }).join("");
        return   movieDataResult.innerHTML = posterImages;
     }catch(err){
-        console.log(err)
+        if(err) return document.querySelector('body').classList.add("loaded"); 
+
     }
 })();
 
